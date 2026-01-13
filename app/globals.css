@@ -4,11 +4,11 @@
 
 @layer base {
   * {
-    @apply border-[#233554];
+    @apply border-[#233554] dark:border-[#233554] border-gray-200;
   }
   
   body {
-    @apply bg-[#0a192f] text-[#ccd6f6] antialiased;
+    @apply bg-white dark:bg-[#0a192f] text-gray-900 dark:text-[#ccd6f6] antialiased;
   }
 
   html {

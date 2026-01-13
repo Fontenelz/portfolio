@@ -1,7 +1,7 @@
 export function Footer() {
   return (
     <footer className="mb-12 text-center">
-      <p className="text-sm text-[#8892b0] leading-relaxed">
+      <p className="text-sm text-gray-600 dark:text-[#8892b0] leading-relaxed">
         Loosely designed in Figma and coded in Visual Studio Code by yours
         truly. Built with{' '}
         <a

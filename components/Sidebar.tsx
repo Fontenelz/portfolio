@@ -9,6 +9,7 @@ import {
   Envelope,
 } from '@phosphor-icons/react/dist/ssr';
 import { PERSONAL_INFO, NAVIGATION, SOCIAL_LINKS } from '@/lib/constants';
+import { ThemeToggle } from './ThemeToggle';
 
 const SOCIAL_ICONS = {
   github: GithubLogo,
@@ -60,17 +61,17 @@ export function Sidebar() {
     <aside className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[48%] lg:flex-col lg:justify-between lg:py-24">
       <div>
         <div className="mb-8">
-          <h1 className="text-4xl font-bold tracking-tight text-slate-200 sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 dark:text-slate-200 sm:text-5xl">
             {PERSONAL_INFO.name}
           </h1>
-          <h2 className="mt-3 text-lg font-medium tracking-tight text-slate-200 sm:text-xl">{PERSONAL_INFO.title}</h2>
+          <h2 className="mt-3 text-lg font-medium tracking-tight text-gray-800 dark:text-slate-200 sm:text-xl">{PERSONAL_INFO.title}</h2>
         </div>
 
-        <p className="text-sm text-[#8892b0] mb-12 leading-relaxed">
+        <p className="text-sm text-gray-600 dark:text-[#8892b0] mb-12 leading-relaxed">
           {PERSONAL_INFO.tagline}
         </p>
 
-        <nav className="space-y-2">
+        <nav className="space-y-2 hidden lg:block">
           {NAVIGATION.map((item) => {
             const isActive = activeSection === item.id;
             return (
@@ -81,11 +82,10 @@ export function Sidebar() {
                   e.preventDefault();
                   handleNavClick(item.href);
                 }}
-                className={`block text-sm font-medium transition-colors ${
-                  isActive
-                    ? 'text-[#64ffda]'
-                    : 'text-[#8892b0] hover:text-[#64ffda]'
-                }`}
+                className={`block text-sm font-medium transition-colors ${isActive
+                  ? 'text-[#64ffda]'
+                  : 'text-gray-600 dark:text-[#8892b0] hover:text-[#64ffda]'
+                  }`}
               >
                 <span className="relative">
                   {item.label}
@@ -99,7 +99,7 @@ export function Sidebar() {
         </nav>
       </div>
 
-      <div className="flex gap-4">
+      <div className="flex items-center gap-4">
         {SOCIAL_LINKS.map((link) => {
           const Icon = SOCIAL_ICONS[link.icon as keyof typeof SOCIAL_ICONS];
           return (
@@ -108,13 +108,15 @@ export function Sidebar() {
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#8892b0] hover:text-[#64ffda] transition-colors"
+              className="text-[#8892b0] dark:text-[#8892b0] text-gray-600 hover:text-[#64ffda] dark:hover:text-[#64ffda] hover:text-[#64ffda] transition-colors"
               aria-label={link.id}
             >
               <Icon size={20} />
             </a>
           );
         })}
+        <div className="w-px h-5 bg-[#233554] dark:bg-[#233554] bg-gray-300" />
+        <ThemeToggle />
       </div>
     </aside>
   );

@@ -5,7 +5,7 @@ import { ArrowSquareOut, GithubLogo } from '@phosphor-icons/react/dist/ssr';
 export function ProjectsSection() {
   return (
     <section id="projects" className="mb-32 scroll-mt-20">
-      <h2 className="text-2xl font-bold text-[#ccd6f6] mb-12 flex items-center">
+      <h2 className="text-2xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-12 flex items-center">
         <span className="text-[#64ffda] mr-3 font-mono text-sm">03.</span>
         Some Things I've Built
       </h2>
@@ -18,9 +18,9 @@ export function ProjectsSection() {
             } gap-8 items-center`}
           >
             <div className="flex-1 w-full">
-              <div className="relative h-64 bg-[#112240] rounded-lg overflow-hidden group border border-[#233554]">
+              <div className="relative h-64 bg-gray-100 dark:bg-[#112240] rounded-lg overflow-hidden group border border-gray-300 dark:border-[#233554]">
                 <div className="absolute inset-0 bg-[#64ffda]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="w-full h-full flex items-center justify-center text-[#8892b0] p-8">
+                <div className="w-full h-full flex items-center justify-center text-gray-600 dark:text-[#8892b0] p-8">
                   <div className="text-center">
                     <div className="text-4xl mb-4">🚀</div>
                     <p className="text-sm">{project.title}</p>
@@ -33,11 +33,11 @@ export function ProjectsSection() {
                 <p className="text-[#64ffda] text-sm font-mono mb-2">
                   Featured Project
                 </p>
-                <h3 className="text-2xl font-bold text-[#ccd6f6] mb-4">
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-4">
                   {project.title}
                 </h3>
-                <div className="bg-[#112240] p-6 rounded-lg mb-4 shadow-lg">
-                  <p className="text-[#8892b0] leading-relaxed">
+                <div className="bg-gray-100 dark:bg-[#112240] p-6 rounded-lg mb-4 shadow-lg">
+                  <p className="text-gray-600 dark:text-[#8892b0] leading-relaxed">
                     {project.description}
                   </p>
                 </div>
@@ -45,7 +45,7 @@ export function ProjectsSection() {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="text-xs font-mono text-[#8892b0]"
+                      className="text-xs font-mono text-gray-600 dark:text-[#8892b0]"
                     >
                       {tech}
                     </span>
@@ -57,7 +57,7 @@ export function ProjectsSection() {
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#8892b0] hover:text-[#64ffda] transition-colors"
+                      className="text-gray-600 dark:text-[#8892b0] hover:text-[#64ffda] transition-colors"
                       aria-label="GitHub"
                     >
                       <GithubLogo size={20} />
@@ -68,7 +68,7 @@ export function ProjectsSection() {
                       href={project.live}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#8892b0] hover:text-[#64ffda] transition-colors"
+                      className="text-gray-600 dark:text-[#8892b0] hover:text-[#64ffda] transition-colors"
                       aria-label="Live site"
                     >
                       <ArrowSquareOut size={20} />
@@ -82,14 +82,14 @@ export function ProjectsSection() {
       </div>
 
       <div className="mt-16">
-        <h3 className="text-xl font-bold text-[#ccd6f6] mb-8">
+        <h3 className="text-xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-8">
           Other Noteworthy Projects
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {PROJECTS.filter((p) => !p.featured).map((project) => (
             <div
               key={project.id}
-              className="bg-[#112240] p-6 rounded-lg hover:translate-y-[-4px] transition-transform"
+              className="bg-gray-100 dark:bg-[#112240] p-6 rounded-lg hover:translate-y-[-4px] transition-transform border border-gray-200 dark:border-transparent"
             >
               <div className="flex justify-between items-start mb-4">
                 <ArrowSquareOut
@@ -101,23 +101,23 @@ export function ProjectsSection() {
                     href={project.github}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#8892b0] hover:text-[#64ffda] transition-colors"
+                    className="text-gray-600 dark:text-[#8892b0] hover:text-[#64ffda] transition-colors"
                   >
                     <GithubLogo size={18} />
                   </a>
                 )}
               </div>
-              <h4 className="text-lg font-semibold text-[#ccd6f6] mb-2">
+              <h4 className="text-lg font-semibold text-gray-900 dark:text-[#ccd6f6] mb-2">
                 {project.title}
               </h4>
-              <p className="text-sm text-[#8892b0] mb-4 leading-relaxed">
+              <p className="text-sm text-gray-600 dark:text-[#8892b0] mb-4 leading-relaxed">
                 {project.description}
               </p>
               <div className="flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="text-xs font-mono text-[#8892b0]"
+                    className="text-xs font-mono text-gray-600 dark:text-[#8892b0]"
                   >
                     {tech}
                   </span>
@@ -129,7 +129,7 @@ export function ProjectsSection() {
       </div>
 
       <div className="mt-16">
-        <h3 className="text-xl font-bold text-[#ccd6f6] mb-8">Latest Articles</h3>
+        <h3 className="text-xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-8">Latest Articles</h3>
         <div className="space-y-6 mb-8">
           {ARTICLES.slice(0, 3).map((article) => (
             <Link
@@ -141,10 +141,10 @@ export function ProjectsSection() {
                 {article.year}
               </div>
               <div className="flex-1">
-                <h4 className="text-lg font-semibold text-[#ccd6f6] group-hover:text-[#64ffda] transition-colors mb-1">
+                <h4 className="text-lg font-semibold text-gray-900 dark:text-[#ccd6f6] group-hover:text-[#64ffda] transition-colors mb-1">
                   {article.title}
                 </h4>
-                <p className="text-sm text-[#8892b0]">{article.description}</p>
+                <p className="text-sm text-gray-600 dark:text-[#8892b0]">{article.description}</p>
               </div>
             </Link>
           ))}

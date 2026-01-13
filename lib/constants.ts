@@ -1,9 +1,9 @@
 export const PERSONAL_INFO = {
-  name: 'Matheus Oliveira',
-  title: 'Front End Engineer',
-  tagline: 'I build accessible, pixel-perfect digital experiences for the web.',
+  name: 'Matheus Fontenele',
+  title: 'Software Engineer',
+  tagline: 'Designs, develops, tests, and maintains systems, applications, and software, applying engineering principles to ensure quality, organization, and efficiency, going beyond simple programming to focus on architecture, security, scalability, and continuous maintenance, working in collaboration with multidisciplinary teams to deliver complete digital solutions.',
   email: 'matheus.fontenele@icloud.com',
-  description: `I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering. Currently, I'm a Front-End Engineer specializing in accessibility and modern web technologies.`,
+  description: `I'm a developer passionate about crafting accessible, pixel-perfect user interfaces that blend thoughtful design with robust engineering. Currently, I'm a Software Engineer specializing in accessibility and modern web technologies.`,
   about: `I've worked with advertising agencies and large corporations to start-ups and small digital product studios. When I'm not at the computer, I'm usually climbing, playing sports, hanging out with friends, or exploring new technologies.`,
 } as const;
 
