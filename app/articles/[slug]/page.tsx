@@ -4,9 +4,9 @@ import { ARTICLES } from '@/lib/constants';
 import { ArrowLeft, Calendar, Clock } from '@phosphor-icons/react/dist/ssr';
 
 interface ArticlePageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 export function generateStaticParams() {
@@ -15,8 +15,9 @@ export function generateStaticParams() {
   }));
 }
 
-export default function ArticlePage({ params }: ArticlePageProps) {
-  const article = ARTICLES.find((a) => a.slug === params.slug);
+export default async function ArticlePage({ params }: ArticlePageProps) {
+  const { slug } = await params;
+  const article = ARTICLES.find((a) => a.slug === slug);
 
   if (!article) {
     notFound();
@@ -36,10 +37,10 @@ export default function ArticlePage({ params }: ArticlePageProps) {
         <article>
           <div className="mb-8">
             <div className="flex items-center gap-3 mb-4">
-              <span className="text-xs font-mono text-[#64ffda] bg-[#0a192f] px-3 py-1 rounded">
+              <span className="text-xs font-mono text-[#64ffda] bg-gray-100 dark:bg-[#0a192f] px-3 py-1 rounded">
                 {article.category}
               </span>
-              <div className="flex items-center gap-4 text-sm text-[#8892b0]">
+              <div className="flex items-center gap-4 text-sm text-gray-600 dark:text-[#8892b0]">
                 <span className="flex items-center gap-1">
                   <Calendar size={14} />
                   {article.year}
@@ -50,17 +51,17 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                 </span>
               </div>
             </div>
-            <h1 className="text-4xl font-bold text-[#ccd6f6] mb-4">
+            <h1 className="text-4xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-4">
               {article.title}
             </h1>
-            <p className="text-lg text-[#8892b0] leading-relaxed">
+            <p className="text-lg text-gray-600 dark:text-[#8892b0] leading-relaxed">
               {article.description}
             </p>
           </div>
 
           <div className="prose prose-invert max-w-none">
-            <div className="bg-[#112240] border border-[#233554] rounded-lg p-8">
-              <div className="text-[#8892b0] leading-relaxed space-y-4">
+            <div className="bg-gray-100 dark:bg-[#112240] border border-gray-200 dark:border-[#233554] rounded-lg p-8">
+              <div className="text-gray-600 dark:text-[#8892b0] leading-relaxed space-y-4">
                 <p>
                   This is a placeholder article content. In a real application,
                   you would fetch the full article content from a CMS, markdown
@@ -70,7 +71,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   The article &quot;{article.title}&quot; would contain the full
                   content here, formatted with proper markdown or HTML.
                 </p>
-                <h2 className="text-2xl font-bold text-[#ccd6f6] mt-8 mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-[#ccd6f6] mt-8 mb-4">
                   Introduction
                 </h2>
                 <p>
@@ -79,7 +80,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   Ut enim ad minim veniam, quis nostrud exercitation ullamco
                   laboris.
                 </p>
-                <h2 className="text-2xl font-bold text-[#ccd6f6] mt-8 mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-[#ccd6f6] mt-8 mb-4">
                   Main Content
                 </h2>
                 <p>
@@ -88,7 +89,7 @@ export default function ArticlePage({ params }: ArticlePageProps) {
                   occaecat cupidatat non proident, sunt in culpa qui officia
                   deserunt mollit anim id est laborum.
                 </p>
-                <h2 className="text-2xl font-bold text-[#ccd6f6] mt-8 mb-4">
+                <h2 className="text-2xl font-bold text-gray-900 dark:text-[#ccd6f6] mt-8 mb-4">
                   Conclusion
                 </h2>
                 <p>
