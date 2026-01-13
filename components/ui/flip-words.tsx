@@ -57,10 +57,10 @@ export const FlipWords = ({
           scale: 1,
           position: 'absolute',
         }}
-        className={cn(
-          'z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2',
-          className,
-        )}
+        // className={cn(
+        //   'z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2',
+        //   className,
+        // )}
         key={currentWord}
       >
         {/* edit suggested by Sajal: https://x.com/DewanganSajal */}
@@ -73,7 +73,7 @@ export const FlipWords = ({
               delay: wordIndex * 0.3,
               duration: 0.3,
             }}
-            className="inline-block whitespace-nowrap"
+          // className="inline-block whitespace-nowrap"
           >
             {word.split('').map((letter, letterIndex) => (
               <motion.span
@@ -84,7 +84,7 @@ export const FlipWords = ({
                   delay: wordIndex * 0.3 + letterIndex * 0.05,
                   duration: 0.2,
                 }}
-                className="inline-block"
+              // className="inline-block"
               >
                 {letter}
               </motion.span>

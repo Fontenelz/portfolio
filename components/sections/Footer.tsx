@@ -10,6 +10,7 @@ import {
 } from '@phosphor-icons/react/dist/ssr';
 import { SocialButton } from '@/components/SocialButton';
 import { PERSONAL_INFO, SOCIAL_LINKS } from '@/lib/constants';
+import { Envelope } from '@phosphor-icons/react';
 
 const SOCIAL_ICONS = {
   github: GithubLogo,
@@ -17,6 +18,7 @@ const SOCIAL_ICONS = {
   twitter: XLogo,
   linkedin: LinkedinLogo,
   discord: DiscordLogo,
+  email: Envelope,
 } as const;
 
 export function Footer() {

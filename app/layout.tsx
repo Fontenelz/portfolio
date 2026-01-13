@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import { Sidebar } from '@/components/Sidebar';
 import { MobileNav } from '@/components/MobileNav';
 import { ThemeProvider } from '@/components/ThemeProvider';
 import './globals.css';

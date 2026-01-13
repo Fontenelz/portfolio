@@ -5,7 +5,7 @@ export function ExperienceSection() {
     <section id="experience" className="mb-32 scroll-mt-20">
       <h2 className="text-2xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-12 flex items-center">
         <span className="text-[#64ffda] mr-3 font-mono text-sm">02.</span>
-        Where I've Worked
+        Where I&apos;ve Worked
       </h2>
       <div className="max-w-4xl">
         <div className="relative pl-4">

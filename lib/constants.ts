@@ -19,26 +19,31 @@ export const SOCIAL_LINKS = [
     id: 'github',
     href: 'https://github.com/MatheusFontenele',
     icon: 'github',
+    delay: 0.1,
   },
   {
     id: 'linkedin',
     href: 'https://linkedin.com',
     icon: 'linkedin',
+    delay: 0.2,
   },
   {
     id: 'instagram',
     href: 'https://instagram.com',
     icon: 'instagram',
+    delay: 0.3,
   },
   {
     id: 'twitter',
     href: 'https://twitter.com',
     icon: 'twitter',
+    delay: 0.4,
   },
   {
     id: 'email',
     href: 'mailto:matheus.fontenele@icloud.com',
     icon: 'email',
+    delay: 0.5,
   },
 ] as const;
 
@@ -278,5 +283,72 @@ export const ARTICLES: Article[] = [
     category: 'Design',
     readTime: '14 min read',
     slug: 'design-systems-ui-components',
+  },
+];
+
+export const CAROUSEL_ITEMS_COUNT = 10;
+
+export const FOOTER_LINKS = [
+  {
+    id: 'github',
+    href: 'https://github.com/MatheusFontenele',
+    icon: 'github',
+    delay: 0.1,
+  },
+  {
+    id: 'linkedin',
+    href: 'https://linkedin.com',
+    icon: 'linkedin',
+    delay: 0.2,
+  },
+  {
+    id: 'instagram',
+    href: 'https://instagram.com',
+    icon: 'instagram',
+    delay: 0.3,
+  },
+  {
+    id: 'twitter',
+    href: 'https://twitter.com',
+    icon: 'twitter',
+    delay: 0.4,
+  },
+  {
+    id: 'email',
+    href: 'mailto:matheus.fontenele@icloud.com',
+    icon: 'email',
+    delay: 0.5,
+  },
+] as const;
+
+export const FLIP_WORDS = [ 'Designs', 'Develops', 'Tests', 'Maintains', 'Systems', 'Applications', 'Software', 'Engineering', 'Principles', 'Quality', 'Organization', 'Efficiency' ];
+// id: number; name: string; designation: string; image: string;
+export const PEOPLE = [
+  {
+    id: 1,
+    name: 'John Doe',
+    designation: 'Software Engineer',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 2,
+    name: 'Jane Doe',
+    designation: 'Software Engineer',
+    image: 'https://via.placeholder.com/150',
+  },
+  {
+    id: 3,
+    name: 'John Doe',
+    designation: 'Software Engineer',
+    image: 'https://via.placeholder.com/150',
+  },
+];
+
+export const TESTIMONIALS = [
+  {
+    id: 1,
+    quote: 'Designs, develops, tests, and maintains systems, applications, and software, applying engineering principles to ensure quality, organization, and efficiency, going beyond simple programming to focus on architecture, security, scalability, and continuous maintenance, working in collaboration with multidisciplinary teams to deliver complete digital solutions.',
+    name: 'John Doe',
+    title: 'Software Engineer',
   },
 ];

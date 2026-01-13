@@ -7,7 +7,7 @@ export function ProjectsSection() {
     <section id="projects" className="mb-32 scroll-mt-20">
       <h2 className="text-2xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-12 flex items-center">
         <span className="text-[#64ffda] mr-3 font-mono text-sm">03.</span>
-        Some Things I've Built
+        Some Things I&apos;ve Built
       </h2>
       <div className="space-y-12 mb-16">
         {PROJECTS.filter((p) => p.featured).map((project, index) => (

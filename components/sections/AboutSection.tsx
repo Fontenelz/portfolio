@@ -15,7 +15,7 @@ export function AboutSection() {
           {PERSONAL_INFO.about}
         </p>
         <div className="mt-6">
-          <p className="text-gray-600 dark:text-[#8892b0] mb-4">Here are a few technologies I've been working with recently:</p>
+          <p className="text-gray-600 dark:text-[#8892b0] mb-4">Here are a few technologies I&apos;ve been working with recently:</p>
           <ul className="grid grid-cols-2 gap-2 text-gray-600 dark:text-[#8892b0] text-sm font-mono">
             <li className="flex items-center">
               <span className="text-[#64ffda] mr-2">▹</span>
