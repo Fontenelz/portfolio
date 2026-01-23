@@ -57,70 +57,115 @@ export interface Experience {
 }
 
 export const EXPERIENCES: Experience[] = [
+  // {
+  //   id: '1',
+  //   period: '2024 — PRESENT',
+  //   title: 'Senior Frontend Engineer, Accessibility',
+  //   company: 'Klaviyo',
+  //   description:
+  //     'Focus on web accessibility and UI components. Building accessible, scalable front-end experiences.',
+  //   technologies: ['JavaScript', 'TypeScript', 'React', 'Storybook'],
+  // },
+  // {
+  //   id: '2',
+  //   period: '2018 — 2024',
+  //   title: 'Lead Engineer',
+  //   company: 'Upstatement',
+  //   description:
+  //     'Built websites, design systems, and mobile apps for various clients. Led development teams and mentored junior developers.',
+  //   technologies: [
+  //     'JavaScript',
+  //     'TypeScript',
+  //     'HTML & SCSS',
+  //     'React',
+  //     'Next.js',
+  //     'React Native',
+  //     'WordPress',
+  //     'Contentful',
+  //     'Node.js',
+  //     'PHP',
+  //   ],
+  // },
+  // {
+  //   id: '3',
+  //   period: 'JULY — DEC 2017',
+  //   title: 'UI Engineer Co-op',
+  //   company: 'Apple',
+  //   description:
+  //     'Developed interactive web apps for Apple Music. Worked with MusicKit.js and collaborated with design teams.',
+  //   technologies: ['Ember', 'SCSS', 'JavaScript', 'MusicKit.js'],
+  // },
+  // {
+  //   id: '4',
+  //   period: '2016 — 2017',
+  //   title: 'Developer',
+  //   company: 'Scout Studio',
+  //   description:
+  //     'Collaborated on pro-bono projects. Built responsive websites and web applications.',
+  //   technologies: ['Jekyll', 'SCSS', 'JavaScript', 'WordPress'],
+  // },
+  // {
+  //   id: '5',
+  //   period: 'JULY — DEC 2016',
+  //   title: 'Software Engineer Co-op',
+  //   company: 'Starry',
+  //   description:
+  //     'Engineered features for Starrys Android app. Worked on mobile development and user experience.',
+  //   technologies: ['Cordova', 'Backbone', 'JavaScript', 'CSS'],
+  // },
+  // {
+  //   id: '6',
+  //   period: 'JULY — DEC 2015',
+  //   title: 'Creative Technologist Co-op',
+  //   company: 'MullenLowe U.S.',
+  //   description:
+  //     'Developed production code for client websites. Created interactive experiences and responsive layouts.',
+  //   technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery'],
+  // },
   {
     id: '1',
-    period: '2024 — PRESENT',
-    title: 'Senior Frontend Engineer, Accessibility',
-    company: 'Klaviyo',
+    period: 'Aug 2022 — Present',
+    title: 'Systems Analyst',
+    company: 'Televisão Mirante Ltda.',
     description:
-      'Focus on web accessibility and UI components. Building accessible, scalable front-end experiences.',
-    technologies: ['JavaScript', 'TypeScript', 'React', 'Storybook'],
+      'Development of new features, bug fixing, refactoring, and testing of institutional applications (Imirante, Troféu Mirante, among others) using Laravel and Vue.js. Development and maintenance of mobile applications (Mirante FM, Mirante AM, and Imirante).',
+    technologies: ['Laravel', 'Vue.js', 'JavaScript', 'PHP', 'Mobile', 'MySQL'],
   },
   {
     id: '2',
-    period: '2018 — 2024',
-    title: 'Lead Engineer',
-    company: 'Upstatement',
+    period: 'May 2022 — May 2025',
+    title: 'Full Stack Developer',
+    company: 'Softnow',
     description:
-      'Built websites, design systems, and mobile apps for various clients. Led development teams and mentored junior developers.',
-    technologies: [
-      'JavaScript',
-      'TypeScript',
-      'HTML & SCSS',
-      'React',
-      'Next.js',
-      'React Native',
-      'WordPress',
-      'Contentful',
-      'Node.js',
-      'PHP',
-    ],
+      'Development and maintenance of institutional applications using Laravel. Implementation of new features, bug fixes, and tests following good development practices.',
+    technologies: ['Laravel', 'PHP', 'JavaScript', 'MySQL', 'Git'],
   },
   {
     id: '3',
-    period: 'JULY — DEC 2017',
-    title: 'UI Engineer Co-op',
-    company: 'Apple',
+    period: 'Jul 2019 — Sep 2020',
+    title: 'Full Stack Developer',
+    company: 'Faculdade Pitágoras',
     description:
-      'Developed interactive web apps for Apple Music. Worked with MusicKit.js and collaborated with design teams.',
-    technologies: ['Ember', 'SCSS', 'JavaScript', 'MusicKit.js'],
+      'Development of internal applications using ReactJS and Node.js. Technical support for staff and students, system installation and maintenance. Creation of systems for managing lists and querying students and classrooms. Monitoring multiple databases for institutional inventory management.',
+    technologies: ['React', 'Node.js', 'JavaScript', 'MySQL', 'PostgreSQL'],
   },
   {
     id: '4',
-    period: '2016 — 2017',
-    title: 'Developer',
-    company: 'Scout Studio',
+    period: 'Aug 2017 — Jun 2019',
+    title: 'IT Intern',
+    company: 'Faculdade Pitágoras',
     description:
-      'Collaborated on pro-bono projects. Built responsive websites and web applications.',
-    technologies: ['Jekyll', 'SCSS', 'JavaScript', 'WordPress'],
+      'Operation and maintenance of computers and technical support for staff and students.',
+    technologies: ['Technical Support', 'Computer Maintenance', 'Networking'],
   },
   {
     id: '5',
-    period: 'JULY — DEC 2016',
-    title: 'Software Engineer Co-op',
-    company: 'Starry',
+    period: 'Aug 2016 — Dec 2016',
+    title: 'IT Intern',
+    company: 'Detran/MA',
     description:
-      'Engineered features for Starrys Android app. Worked on mobile development and user experience.',
-    technologies: ['Cordova', 'Backbone', 'JavaScript', 'CSS'],
-  },
-  {
-    id: '6',
-    period: 'JULY — DEC 2015',
-    title: 'Creative Technologist Co-op',
-    company: 'MullenLowe U.S.',
-    description:
-      'Developed production code for client websites. Created interactive experiences and responsive layouts.',
-    technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery'],
+      'Computer updating, formatting, and maintenance, as well as technical support for the institution’s staff.',
+    technologies: ['Technical Support', 'Computer Maintenance'],
   },
 ];
 
