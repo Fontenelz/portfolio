@@ -1,5 +1,26 @@
 import type { Experience, Project, Article, SocialLink, Person, Testimonial } from '@/types';
 
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://matheus-fontenele.dev';
+
+export const SEO_KEYWORDS = [
+  'Matheus Fontenele',
+  'Software Engineer',
+  'Full Stack Developer',
+  'Frontend Developer',
+  'React Developer',
+  'Next.js Developer',
+  'TypeScript',
+  'JavaScript',
+  'Laravel',
+  'PHP',
+  'Vue.js',
+  'Node.js',
+  'Web Development',
+  'Portfolio',
+  'Brazil',
+  'Maranhão',
+];
+
 export const PERSONAL_INFO = {
   name: 'Matheus Fontenele',
   title: 'Software Engineer',

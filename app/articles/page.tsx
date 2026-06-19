@@ -1,6 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ARTICLES } from '@/lib/constants';
+import { ARTICLES, PERSONAL_INFO, SITE_URL } from '@/lib/constants';
 import { ArrowLeft, Calendar, Clock } from '@phosphor-icons/react/dist/ssr';
+
+export const metadata: Metadata = {
+  title: 'Articles',
+  description: `Articles, tutorials, and thoughts on web development, design, and technology by ${PERSONAL_INFO.name}.`,
+  alternates: { canonical: `${SITE_URL}/articles` },
+  openGraph: {
+    title: `Articles — ${PERSONAL_INFO.name}`,
+    description: `Articles, tutorials, and thoughts on web development, design, and technology by ${PERSONAL_INFO.name}.`,
+    url: `${SITE_URL}/articles`,
+    type: 'website',
+  },
+};
 
 export default function ArticlesPage() {
   const articlesByYear = ARTICLES.reduce(
