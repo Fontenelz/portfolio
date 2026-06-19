@@ -9,6 +9,11 @@ export function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleNavClick = (href: string) => {
+    if (!href.startsWith('#')) {
+      window.location.href = href;
+      setIsOpen(false);
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });

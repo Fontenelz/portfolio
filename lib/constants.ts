@@ -1,3 +1,26 @@
+import type { Experience, Project, Article, SocialLink, Person, Testimonial } from '@/types';
+
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://matheus-fontenele.dev';
+
+export const SEO_KEYWORDS = [
+  'Matheus Fontenele',
+  'Software Engineer',
+  'Full Stack Developer',
+  'Frontend Developer',
+  'React Developer',
+  'Next.js Developer',
+  'TypeScript',
+  'JavaScript',
+  'Laravel',
+  'PHP',
+  'Vue.js',
+  'Node.js',
+  'Web Development',
+  'Portfolio',
+  'Brazil',
+  'Maranhão',
+];
+
 export const PERSONAL_INFO = {
   name: 'Matheus Fontenele',
   title: 'Software Engineer',
@@ -14,114 +37,15 @@ export const NAVIGATION = [
   { id: 'articles', label: 'ARTICLES', href: '/articles' },
 ] as const;
 
-export const SOCIAL_LINKS = [
-  {
-    id: 'github',
-    href: 'https://github.com/MatheusFontenele',
-    icon: 'github',
-    delay: 0.1,
-  },
-  {
-    id: 'linkedin',
-    href: 'https://linkedin.com',
-    icon: 'linkedin',
-    delay: 0.2,
-  },
-  {
-    id: 'instagram',
-    href: 'https://instagram.com',
-    icon: 'instagram',
-    delay: 0.3,
-  },
-  {
-    id: 'twitter',
-    href: 'https://twitter.com',
-    icon: 'twitter',
-    delay: 0.4,
-  },
-  {
-    id: 'email',
-    href: 'mailto:matheus.fontenele@icloud.com',
-    icon: 'email',
-    delay: 0.5,
-  },
-] as const;
-
-export interface Experience {
-  id: string;
-  period: string;
-  title: string;
-  company: string;
-  description: string;
-  technologies: string[];
-}
+export const SOCIAL_LINKS: SocialLink[] = [
+  { id: 'github', href: 'https://github.com/MatheusFontenele', icon: 'github', delay: 0.1 },
+  { id: 'linkedin', href: 'https://linkedin.com', icon: 'linkedin', delay: 0.2 },
+  { id: 'instagram', href: 'https://instagram.com', icon: 'instagram', delay: 0.3 },
+  { id: 'twitter', href: 'https://twitter.com', icon: 'twitter', delay: 0.4 },
+  { id: 'email', href: 'mailto:matheus.fontenele@icloud.com', icon: 'email', delay: 0.5 },
+];
 
 export const EXPERIENCES: Experience[] = [
-  // {
-  //   id: '1',
-  //   period: '2024 — PRESENT',
-  //   title: 'Senior Frontend Engineer, Accessibility',
-  //   company: 'Klaviyo',
-  //   description:
-  //     'Focus on web accessibility and UI components. Building accessible, scalable front-end experiences.',
-  //   technologies: ['JavaScript', 'TypeScript', 'React', 'Storybook'],
-  // },
-  // {
-  //   id: '2',
-  //   period: '2018 — 2024',
-  //   title: 'Lead Engineer',
-  //   company: 'Upstatement',
-  //   description:
-  //     'Built websites, design systems, and mobile apps for various clients. Led development teams and mentored junior developers.',
-  //   technologies: [
-  //     'JavaScript',
-  //     'TypeScript',
-  //     'HTML & SCSS',
-  //     'React',
-  //     'Next.js',
-  //     'React Native',
-  //     'WordPress',
-  //     'Contentful',
-  //     'Node.js',
-  //     'PHP',
-  //   ],
-  // },
-  // {
-  //   id: '3',
-  //   period: 'JULY — DEC 2017',
-  //   title: 'UI Engineer Co-op',
-  //   company: 'Apple',
-  //   description:
-  //     'Developed interactive web apps for Apple Music. Worked with MusicKit.js and collaborated with design teams.',
-  //   technologies: ['Ember', 'SCSS', 'JavaScript', 'MusicKit.js'],
-  // },
-  // {
-  //   id: '4',
-  //   period: '2016 — 2017',
-  //   title: 'Developer',
-  //   company: 'Scout Studio',
-  //   description:
-  //     'Collaborated on pro-bono projects. Built responsive websites and web applications.',
-  //   technologies: ['Jekyll', 'SCSS', 'JavaScript', 'WordPress'],
-  // },
-  // {
-  //   id: '5',
-  //   period: 'JULY — DEC 2016',
-  //   title: 'Software Engineer Co-op',
-  //   company: 'Starry',
-  //   description:
-  //     'Engineered features for Starrys Android app. Worked on mobile development and user experience.',
-  //   technologies: ['Cordova', 'Backbone', 'JavaScript', 'CSS'],
-  // },
-  // {
-  //   id: '6',
-  //   period: 'JULY — DEC 2015',
-  //   title: 'Creative Technologist Co-op',
-  //   company: 'MullenLowe U.S.',
-  //   description:
-  //     'Developed production code for client websites. Created interactive experiences and responsive layouts.',
-  //   technologies: ['HTML', 'CSS', 'JavaScript', 'jQuery'],
-  // },
   {
     id: '1',
     period: 'Aug 2022 — Present',
@@ -164,21 +88,10 @@ export const EXPERIENCES: Experience[] = [
     title: 'IT Intern',
     company: 'Detran/MA',
     description:
-      'Computer updating, formatting, and maintenance, as well as technical support for the institution’s staff.',
+      'Computer updating, formatting, and maintenance, as well as technical support for the institution\'s staff.',
     technologies: ['Technical Support', 'Computer Maintenance'],
   },
 ];
-
-export interface Project {
-  id: string;
-  title: string;
-  description: string;
-  image?: string;
-  technologies: string[];
-  github?: string;
-  live?: string;
-  featured?: boolean;
-}
 
 export const PROJECTS: Project[] = [
   {
@@ -204,7 +117,7 @@ export const PROJECTS: Project[] = [
     title: 'Halcyon Theme',
     description: 'A dark blue theme for code editors. Available for VS Code, Sublime Text, and more.',
     technologies: ['Theme', 'VS Code'],
-    featured: true,
+    featured: false,
   },
   {
     id: '4',
@@ -213,20 +126,9 @@ export const PROJECTS: Project[] = [
     technologies: ['Next.js', 'Tailwind CSS', 'TypeScript'],
     github: 'https://github.com',
     live: 'https://example.com',
-    featured: true,
+    featured: false,
   },
 ];
-
-export interface Article {
-  id: string;
-  year: string;
-  title: string;
-  description: string;
-  category: string;
-  readTime: string;
-  image?: string;
-  slug: string;
-}
 
 export const ARTICLES: Article[] = [
   {
@@ -333,42 +235,9 @@ export const ARTICLES: Article[] = [
 
 export const CAROUSEL_ITEMS_COUNT = 10;
 
-export const FOOTER_LINKS = [
-  {
-    id: 'github',
-    href: 'https://github.com/MatheusFontenele',
-    icon: 'github',
-    delay: 0.1,
-  },
-  {
-    id: 'linkedin',
-    href: 'https://linkedin.com',
-    icon: 'linkedin',
-    delay: 0.2,
-  },
-  {
-    id: 'instagram',
-    href: 'https://instagram.com',
-    icon: 'instagram',
-    delay: 0.3,
-  },
-  {
-    id: 'twitter',
-    href: 'https://twitter.com',
-    icon: 'twitter',
-    delay: 0.4,
-  },
-  {
-    id: 'email',
-    href: 'mailto:matheus.fontenele@icloud.com',
-    icon: 'email',
-    delay: 0.5,
-  },
-] as const;
+export const FLIP_WORDS = ['Designs', 'Develops', 'Tests', 'Maintains', 'Systems', 'Applications', 'Software', 'Engineering', 'Principles', 'Quality', 'Organization', 'Efficiency'];
 
-export const FLIP_WORDS = [ 'Designs', 'Develops', 'Tests', 'Maintains', 'Systems', 'Applications', 'Software', 'Engineering', 'Principles', 'Quality', 'Organization', 'Efficiency' ];
-// id: number; name: string; designation: string; image: string;
-export const PEOPLE = [
+export const PEOPLE: Person[] = [
   {
     id: 1,
     name: 'John Doe',
@@ -389,9 +258,8 @@ export const PEOPLE = [
   },
 ];
 
-export const TESTIMONIALS = [
+export const TESTIMONIALS: Testimonial[] = [
   {
-    id: 1,
     quote: 'Designs, develops, tests, and maintains systems, applications, and software, applying engineering principles to ensure quality, organization, and efficiency, going beyond simple programming to focus on architecture, security, scalability, and continuous maintenance, working in collaboration with multidisciplinary teams to deliver complete digital solutions.',
     name: 'John Doe',
     title: 'Software Engineer',

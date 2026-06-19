@@ -6,7 +6,7 @@ interface SocialButtonProps {
   delay: number;
 }
 
-export function SocialButton({ children, href, delay }: SocialButtonProps) {
+export function SocialButton({ children, href, delay: _delay }: SocialButtonProps) {
   return (
     <a
       className="rounded-md w-[40px] h-[40px] flex items-center justify-center cursor-pointer"

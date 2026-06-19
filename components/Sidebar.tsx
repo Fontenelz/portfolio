@@ -101,7 +101,8 @@ export function Sidebar() {
 
       <div className="flex items-center gap-4">
         {SOCIAL_LINKS.map((link) => {
-          const Icon = SOCIAL_ICONS[link.icon as keyof typeof SOCIAL_ICONS];
+          const Icon = SOCIAL_ICONS[link.icon as keyof typeof SOCIAL_ICONS] ?? null;
+          if (!Icon) return null;
           return (
             <a
               key={link.id}

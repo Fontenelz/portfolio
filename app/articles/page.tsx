@@ -1,6 +1,19 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
-import { ARTICLES } from '@/lib/constants';
+import { ARTICLES, PERSONAL_INFO, SITE_URL } from '@/lib/constants';
 import { ArrowLeft, Calendar, Clock } from '@phosphor-icons/react/dist/ssr';
+
+export const metadata: Metadata = {
+  title: 'Articles',
+  description: `Articles, tutorials, and thoughts on web development, design, and technology by ${PERSONAL_INFO.name}.`,
+  alternates: { canonical: `${SITE_URL}/articles` },
+  openGraph: {
+    title: `Articles — ${PERSONAL_INFO.name}`,
+    description: `Articles, tutorials, and thoughts on web development, design, and technology by ${PERSONAL_INFO.name}.`,
+    url: `${SITE_URL}/articles`,
+    type: 'website',
+  },
+};
 
 export default function ArticlesPage() {
   const articlesByYear = ARTICLES.reduce(
@@ -28,11 +41,11 @@ export default function ArticlesPage() {
         </Link>
 
         <div className="mb-12">
-          <h1 className="text-4xl font-bold text-[#ccd6f6] mb-4 flex items-center">
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-4 flex items-center">
             <span className="text-[#64ffda] mr-3 font-mono text-sm">04.</span>
             Articles
           </h1>
-          <p className="text-[#8892b0] text-lg leading-relaxed">
+          <p className="text-gray-600 dark:text-[#8892b0] text-lg leading-relaxed">
             A collection of articles, tutorials, and thoughts on web development,
             design, and technology.
           </p>
@@ -41,22 +54,22 @@ export default function ArticlesPage() {
         <div className="space-y-12">
           {sortedYears.map((year) => (
             <div key={year}>
-              <h2 className="text-2xl font-bold text-[#ccd6f6] mb-6 font-mono">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-6 font-mono">
                 {year}
               </h2>
               <div className="space-y-6">
                 {articlesByYear[year].map((article) => (
                   <article
                     key={article.id}
-                    className="group bg-[#112240] p-6 rounded-lg border border-[#233554] hover:border-[#64ffda] transition-all hover:translate-y-[-2px]"
+                    className="group bg-gray-100 dark:bg-[#112240] p-6 rounded-lg border border-gray-200 dark:border-[#233554] hover:border-[#64ffda] dark:hover:border-[#64ffda] transition-all hover:translate-y-[-2px]"
                   >
                     <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                       <div className="flex-1">
                         <div className="flex items-center gap-3 mb-2">
-                          <span className="text-xs font-mono text-[#64ffda] bg-[#0a192f] px-2 py-1 rounded">
+                          <span className="text-xs font-mono text-[#64ffda] bg-gray-200 dark:bg-[#0a192f] px-2 py-1 rounded">
                             {article.category}
                           </span>
-                          <div className="flex items-center gap-4 text-xs text-[#8892b0]">
+                          <div className="flex items-center gap-4 text-xs text-gray-600 dark:text-[#8892b0]">
                             <span className="flex items-center gap-1">
                               <Calendar size={12} />
                               {article.year}
@@ -67,10 +80,10 @@ export default function ArticlesPage() {
                             </span>
                           </div>
                         </div>
-                        <h3 className="text-xl font-semibold text-[#ccd6f6] mb-2 group-hover:text-[#64ffda] transition-colors">
+                        <h3 className="text-xl font-semibold text-gray-900 dark:text-[#ccd6f6] mb-2 group-hover:text-[#64ffda] transition-colors">
                           {article.title}
                         </h3>
-                        <p className="text-[#8892b0] leading-relaxed mb-4">
+                        <p className="text-gray-600 dark:text-[#8892b0] leading-relaxed mb-4">
                           {article.description}
                         </p>
                         <Link

@@ -1,30 +1,80 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ARTICLES } from '@/lib/constants';
+import { ARTICLES, PERSONAL_INFO, SITE_URL } from '@/lib/constants';
 import { ArrowLeft, Calendar, Clock } from '@phosphor-icons/react/dist/ssr';
 
 interface ArticlePageProps {
-  params: Promise<{
-    slug: string;
-  }>;
+  params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = ARTICLES.find((a) => a.slug === slug);
+  if (!article) return {};
+
+  const url = `${SITE_URL}/articles/${slug}`;
+
+  return {
+    title: article.title,
+    description: article.description,
+    keywords: [article.category, 'Web Development', 'Tutorial', PERSONAL_INFO.name],
+    authors: [{ name: PERSONAL_INFO.name, url: SITE_URL }],
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'article',
+      url,
+      title: article.title,
+      description: article.description,
+      publishedTime: `${article.year}-01-01`,
+      authors: [PERSONAL_INFO.name],
+      tags: [article.category, 'Web Development'],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description,
+    },
+  };
 }
 
 export function generateStaticParams() {
-  return ARTICLES.map((article) => ({
-    slug: article.slug,
-  }));
+  return ARTICLES.map((article) => ({ slug: article.slug }));
 }
 
 export default async function ArticlePage({ params }: ArticlePageProps) {
   const { slug } = await params;
   const article = ARTICLES.find((a) => a.slug === slug);
 
-  if (!article) {
-    notFound();
-  }
+  if (!article) notFound();
+
+  const articleJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    author: {
+      '@type': 'Person',
+      name: PERSONAL_INFO.name,
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Person',
+      name: PERSONAL_INFO.name,
+      url: SITE_URL,
+    },
+    datePublished: `${article.year}-01-01`,
+    url: `${SITE_URL}/articles/${slug}`,
+    articleSection: article.category,
+    keywords: article.category,
+  };
 
   return (
     <main className="lg:ml-[300px] min-h-screen px-6 lg:px-12 py-12 lg:py-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+      />
       <div className="max-w-3xl mx-auto">
         <Link
           href="/articles"
@@ -35,7 +85,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
         </Link>
 
         <article>
-          <div className="mb-8">
+          <header className="mb-8">
             <div className="flex items-center gap-3 mb-4">
               <span className="text-xs font-mono text-[#64ffda] bg-gray-100 dark:bg-[#0a192f] px-3 py-1 rounded">
                 {article.category}
@@ -57,7 +107,7 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
             <p className="text-lg text-gray-600 dark:text-[#8892b0] leading-relaxed">
               {article.description}
             </p>
-          </div>
+          </header>
 
           <div className="prose prose-invert max-w-none">
             <div className="bg-gray-100 dark:bg-[#112240] border border-gray-200 dark:border-[#233554] rounded-lg p-8">
@@ -106,4 +156,3 @@ export default async function ArticlePage({ params }: ArticlePageProps) {
     </main>
   );
 }
-
