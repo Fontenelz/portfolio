@@ -2,14 +2,14 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { MobileNav } from '@/components/MobileNav';
 import { ThemeProvider } from '@/components/ThemeProvider';
+import { PERSONAL_INFO } from '@/lib/constants';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Matheus Oliveira - Portfolio',
-  description:
-    'Portfolio of Matheus Oliveira, a Front End Engineer who builds accessible, pixel-perfect digital experiences for the web.',
+  title: `${PERSONAL_INFO.name} - Portfolio`,
+  description: PERSONAL_INFO.description,
 };
 
 export default function RootLayout({

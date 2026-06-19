@@ -81,6 +81,7 @@ export function ProjectsSection() {
         ))}
       </div>
 
+      {PROJECTS.some((p) => !p.featured) && (
       <div className="mt-16">
         <h3 className="text-xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-8">
           Other Noteworthy Projects
@@ -127,6 +128,7 @@ export function ProjectsSection() {
           ))}
         </div>
       </div>
+      )}
 
       <div className="mt-16">
         <h3 className="text-xl font-bold text-gray-900 dark:text-[#ccd6f6] mb-8">Latest Articles</h3>
@@ -174,29 +176,6 @@ export function ProjectsSection() {
         </div>
       </div>
 
-      <div className="mt-12 text-center">
-        <a
-          href="/archive"
-          className="inline-flex items-center gap-2 text-[#64ffda] font-mono text-sm hover:gap-3 transition-all"
-        >
-          View Full Project Archive
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M6 12L10 8L6 4"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </a>
-      </div>
     </section>
   );
 }

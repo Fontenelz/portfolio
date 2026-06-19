@@ -1,12 +1,23 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { ARTICLES } from '@/lib/constants';
+import { ARTICLES, PERSONAL_INFO } from '@/lib/constants';
 import { ArrowLeft, Calendar, Clock } from '@phosphor-icons/react/dist/ssr';
 
 interface ArticlePageProps {
   params: Promise<{
     slug: string;
   }>;
+}
+
+export async function generateMetadata({ params }: ArticlePageProps): Promise<Metadata> {
+  const { slug } = await params;
+  const article = ARTICLES.find((a) => a.slug === slug);
+  if (!article) return {};
+  return {
+    title: `${article.title} — ${PERSONAL_INFO.name}`,
+    description: article.description,
+  };
 }
 
 export function generateStaticParams() {

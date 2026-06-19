@@ -11,7 +11,7 @@ export function ExperienceSection() {
         <div className="relative pl-4">
           <div className="absolute left-0 top-0 bottom-0 w-[2px] bg-gray-300 dark:bg-[#233554]" />
           <div className="space-y-12">
-            {EXPERIENCES.map((exp, index) => (
+            {EXPERIENCES.map((exp) => (
               <div key={exp.id} className="relative pl-8">
                 <div className="absolute left-[-20px] top-1 w-3 h-3 bg-[#64ffda] rounded-full border-4 border-white dark:border-[#0a192f]" />
                 <div className="mb-2">
